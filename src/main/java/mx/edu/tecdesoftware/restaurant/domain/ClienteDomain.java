@@ -7,6 +7,15 @@ public class ClienteDomain {
     private String telefono;
     private String correo;
 
+    // Constructor
+    public ClienteDomain(Integer idCliente, String nombre, String apellidos, String telefono, String correo){
+        this.idCliente = idCliente;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.telefono = telefono;
+        this.correo = correo;
+    }
+
     // Getters y Setters
     public Integer getIdCliente() { return idCliente; }
     public void setIdCliente(Integer idCliente) { this.idCliente = idCliente; }

@@ -4,10 +4,10 @@ import java.time.LocalDateTime;
 
 public class PedidoDomain {
     private Integer idPedido;
-    private Integer numeroMesa; // Difiere de 'idMesa' en la entidad
+    private Integer numeroMesa;
     private String idCliente;
-    private LocalDateTime fechaPedido; // Difiere de 'fecha'
-    private String estadoActual; // Difiere de 'estado'
+    private LocalDateTime fechaPedido;
+    private String estadoActual;
     private String comentario;
 
     // Getters y Setters
