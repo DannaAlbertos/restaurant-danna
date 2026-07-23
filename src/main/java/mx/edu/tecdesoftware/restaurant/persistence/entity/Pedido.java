@@ -13,6 +13,9 @@ public class Pedido {
     @Column(name = "id_pedido")
     private Integer idPedido;
 
+    @Column(name = "id_cliente")
+    private Integer idCliente;
+
     @Column(name = "id_mesa")
     private Integer idMesa;
 
@@ -30,6 +33,9 @@ public class Pedido {
 
     public Integer getIdPedido() { return idPedido; }
     public void setIdPedido(Integer idPedido) { this.idPedido = idPedido; }
+
+    public Integer getIdCliente() { return idCliente; }
+    public void setIdCliente(Integer idCliente) { this.idCliente = idCliente; }
 
     public Integer getIdMesa() { return idMesa; }
     public void setIdMesa(Integer idMesa) { this.idMesa = idMesa; }
