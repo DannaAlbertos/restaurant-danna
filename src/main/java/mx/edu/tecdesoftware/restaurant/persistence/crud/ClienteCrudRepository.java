@@ -5,6 +5,6 @@ import org.springframework.data.repository.ListCrudRepository;
 
 import java.util.Optional;
 
-public interface ClienteCrudRepository extends ListCrudRepository<Cliente, String> {
+public interface ClienteCrudRepository extends ListCrudRepository<Cliente, Integer> {
     Optional<Cliente> findByCorreoElectronico(String correoElectronico);
 }

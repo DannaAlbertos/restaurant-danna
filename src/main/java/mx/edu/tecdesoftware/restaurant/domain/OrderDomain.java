@@ -1,13 +1,25 @@
 package mx.edu.tecdesoftware.restaurant.domain;
 
 import java.time.LocalDateTime;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 public class OrderDomain {
+    @Schema(description = "ID autogenerado del pedido", example = "1", accessMode = Schema.AccessMode.READ_ONLY)
     private Integer orderId;
+
+    @Schema(description = "Número de la mesa asignada", example = "1")
     private Integer tableNumber;
+
+    @Schema(description = "ID numérico del cliente", example = "1")
     private String customerId;
+
+    @Schema(description = "Fecha y hora del pedido", example = "2026-07-28T14:00:00")
     private LocalDateTime orderDate;
+
+    @Schema(description = "Estado actual del pedido", example = "PENDIENTE")
     private String status;
+
+    @Schema(description = "Comentarios adicionales sobre el pedido", example = "Sin cebolla por favor")
     private String comment;
 
     public OrderDomain() {

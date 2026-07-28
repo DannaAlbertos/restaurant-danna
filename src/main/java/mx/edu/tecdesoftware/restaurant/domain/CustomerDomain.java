@@ -1,16 +1,27 @@
 package mx.edu.tecdesoftware.restaurant.domain;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 public class CustomerDomain {
-    private String customerId;
+    @Schema(description = "ID único del cliente", example = "1", accessMode = Schema.AccessMode.READ_ONLY)
+    private Integer customerId;
+
+    @Schema(description = "Nombre(s) del cliente", example = "Carlos")
     private String firstName;
+
+    @Schema(description = "Apellido(s) del cliente", example = "Mendoza")
     private String lastName;
+
+    @Schema(description = "Número telefónico", example = "9991234567")
     private String phone;
+
+    @Schema(description = "Correo electrónico", example = "carlos.mendoza@email.com")
     private String email;
 
     public CustomerDomain() {
     }
 
-    public CustomerDomain(String customerId, String firstName, String lastName, String phone, String email) {
+    public CustomerDomain(Integer customerId, String firstName, String lastName, String phone, String email) {
         this.customerId = customerId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -18,8 +29,8 @@ public class CustomerDomain {
         this.email = email;
     }
 
-    public String getCustomerId() { return customerId; }
-    public void setCustomerId(String customerId) { this.customerId = customerId; }
+    public Integer getCustomerId() { return customerId; }
+    public void setCustomerId(Integer customerId) { this.customerId = customerId; }
 
     public String getFirstName() { return firstName; }
     public void setFirstName(String firstName) { this.firstName = firstName; }

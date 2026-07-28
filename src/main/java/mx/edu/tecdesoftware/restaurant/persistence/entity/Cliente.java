@@ -7,8 +7,9 @@ import jakarta.persistence.*;
 public class Cliente {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_cliente")
-    private String idCliente;
+    private Integer idCliente;
 
     @Column(name = "nombre")
     private String nombre;
@@ -23,11 +24,11 @@ public class Cliente {
     private String correoElectronico;
 
     // Getters y Setters
-    public String getIdCliente() {
+    public Integer getIdCliente() {
         return idCliente;
     }
 
-    public void setIdCliente(String idCliente) {
+    public void setIdCliente(Integer idCliente) {
         this.idCliente = idCliente;
     }
 
