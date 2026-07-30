@@ -23,6 +23,9 @@ public class Cliente {
     @Column(name = "correo_electronico")
     private String correoElectronico;
 
+    @Column(name = "contrasena")
+    private String contrasena;
+
     // Getters y Setters
     public Integer getIdCliente() {
         return idCliente;
@@ -63,4 +66,8 @@ public class Cliente {
     public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
     }
+
+    public String getContrasena() { return contrasena;}
+
+    public void setContrasena(String contrasena) { this.contrasena = contrasena; }
 }

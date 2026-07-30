@@ -7,4 +7,6 @@ import java.util.Optional;
 
 public interface ClienteCrudRepository extends ListCrudRepository<Cliente, Integer> {
     Optional<Cliente> findByCorreoElectronico(String correoElectronico);
+
+    boolean existsByCorreoElectronico(String correoElectronico);
 }

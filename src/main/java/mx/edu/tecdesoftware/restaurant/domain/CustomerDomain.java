@@ -3,7 +3,7 @@ package mx.edu.tecdesoftware.restaurant.domain;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 public class CustomerDomain {
-    @Schema(description = "ID único del cliente", example = "1", accessMode = Schema.AccessMode.READ_ONLY)
+    @Schema(description = "ID único del cliente", example = "10", accessMode = Schema.AccessMode.READ_ONLY)
     private Integer customerId;
 
     @Schema(description = "Nombre(s) del cliente", example = "Carlos")
