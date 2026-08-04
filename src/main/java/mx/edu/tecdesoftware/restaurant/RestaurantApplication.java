@@ -24,7 +24,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
                         "**Instrucciones de Autenticación:**\n" +
                         "1. Genera tu token en el endpoint `/auth/login`.\n" +
                         "2. Haz clic en el botón verde **Authorize** ubicado arriba a la derecha.\n" +
-                        "3. Ingresa tu token JWT."
+                        "3. Ingresa tu token JWT en 'miAutenticación'."
 
         ),
         security = @SecurityRequirement(name = "miAutenticacion")
