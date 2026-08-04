@@ -28,7 +28,7 @@ public class OrderController {
     @GetMapping
     @Operation(
             summary = "Get all orders",
-            description = "Return a list of all all orders registered in the system"
+            description = "Return a list of all orders registered in the system"
     )
     @ApiResponse(responseCode = "200", description = "Successful retrieval of orders")
     @ApiResponse(responseCode = "204", description = "No orders content found")
@@ -68,7 +68,9 @@ public class OrderController {
     @ApiResponse(responseCode = "204", description = "No orders found for this customer")
     @ApiResponse(responseCode = "401", description = "Unauthorized")
     @ApiResponse(responseCode = "500", description = "Internal server error")
-    public ResponseEntity<List<OrderDomain>> getByCustomerId(@PathVariable("customerId") Integer customerId) {
+    public ResponseEntity<List<OrderDomain>> getByCustomerId(
+            @Parameter(description = "ID of the customer", example = "10", required = true)
+            @PathVariable("customerId") Integer customerId) {
         List<OrderDomain> orders = orderService.getByCustomerId(customerId);
         if (orders.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -86,7 +88,7 @@ public class OrderController {
     @ApiResponse(responseCode = "401", description = "Unauthorized")
     @ApiResponse(responseCode = "500", description = "Internal server error")
     public ResponseEntity<List<OrderDomain>> getByStatus(
-            @Parameter(description = "Status of the orders to filter", example = "10", required = true)
+            @Parameter(description = "Status of the orders to filter", example = "PENDING", required = true)
             @PathVariable("status") String status) {
         List<OrderDomain> orders = orderService.getByStatus(status);
         if (orders.isEmpty()) {
@@ -136,11 +138,10 @@ public class OrderController {
             summary = "Delete an order by ID",
             description = "Delete an order record from the system by its ID"
     )
-    @ApiResponse(responseCode = "201", description = "Order created successfully")
-    @ApiResponse(responseCode = "400", description = "Invalid order data")
+    @ApiResponse(responseCode = "200", description = "Order deleted successfully")
     @ApiResponse(responseCode = "401", description = "Unauthorized - Missing or invalid token")
     @ApiResponse(responseCode = "403", description = "Forbidden - Access denied")
-    @ApiResponse(responseCode = "409", description = "Order conflict - Duplicate order ID")
+    @ApiResponse(responseCode = "404", description = "Order not found")
     @ApiResponse(responseCode = "500", description = "Internal server error")
     public ResponseEntity<Void> delete(
             @Parameter(description = "ID of the order to be deleted", example = "1", required = true)

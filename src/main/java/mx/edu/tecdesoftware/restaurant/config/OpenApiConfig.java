@@ -17,11 +17,11 @@ public class OpenApiConfig {
                         .title("API Restaurante")
                         .version("1.0")
                         .description("Documentación de API REST"))
-                .addSecurityItem(new SecurityRequirement().addList("bearerAuth"))
+                .addSecurityItem(new SecurityRequirement().addList("miAutenticacion"))
                 .components(new io.swagger.v3.oas.models.Components()
-                        .addSecuritySchemes("bearerAuth",
+                        .addSecuritySchemes("miAutenticacion",
                                 new SecurityScheme()
-                                        .name("bearerAuth")
+                                        .name("miAutenticacion")
                                         .type(SecurityScheme.Type.HTTP)
                                         .scheme("bearer")
                                         .bearerFormat("JWT")));
